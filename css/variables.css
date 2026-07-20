@@ -1,0 +1,20 @@
+/* CSS/variables.css */
+:root {
+    /* Dark Mode Palette */
+    --bg-color: #0d1117;
+    --surface-glass: rgba(255, 255, 255, 0.05);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    
+    /* Text Colors */
+    --text-main: #f0f6fc;
+    --text-muted: #8b949e;
+    
+    /* Accents & Glow */
+    --accent-blue: #58a6ff;
+
+    /* Typography */
+    --font-global: 'Outfit', sans-serif;
+    --font-name: 'Space Grotesk', sans-serif; /* Locked in specifically for your name */
+    
+    --spacing-md: 2rem;
+}

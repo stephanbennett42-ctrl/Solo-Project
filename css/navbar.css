@@ -1,0 +1,25 @@
+/* css/navbar.css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--spacing-md);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+/* Update this in CSS/navbar.css */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* NEW BOX MODEL RULES */
+    padding: 1rem 2rem;  /* Inside space */
+    margin: 1.5rem 2rem; /* Outside space - pulls it off the top and sides */
+    border-radius: 16px; /* Rounds the corners of the glass nav */
+}

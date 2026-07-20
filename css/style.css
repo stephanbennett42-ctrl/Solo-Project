@@ -1,0 +1,129 @@
+/* CSS/style.css */
+@import url("reset.css");
+@import url("variables.css");
+@import url("navbar.css");
+@import url("hero.css");
+
+/* Global Application */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-global);
+}
+
+/* Protect Name Font & Add Glow Effect */
+.logo, footer p {
+    font-family: var(--font-name);
+    font-weight: 700;
+    color: var(--text-main);
+    text-shadow: 0 0 8px var(--accent-blue), 0 0 20px var(--accent-blue);
+}
+
+/* Glassmorphism Effect for Nav and Project Cards */
+nav, .card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+}
+
+/* Links */
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    text-shadow: 0 0 8px var(--accent-blue);
+}
+/* Add to CSS/style.css */
+
+/* Center the main content and constrain the width */
+main, header, footer {
+    max-width: 1100px;
+    margin: 0 auto; /* Automatically centers the container */
+}
+
+/* Add massive breathing room between sections */
+section {
+    padding: 5rem 2rem; 
+}
+
+/* Push text elements away from each other */
+h1, h2, h3, p {
+    margin-bottom: 1.5rem;
+}
+/* Update this in CSS/style.css */
+
+.card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    
+    /* NEW BOX MODEL RULES */
+    padding: 2rem;      /* Pushes the text away from the glass edges */
+    margin-top: 2rem;   /* Pushes the card down away from the "My Projects" heading */
+}
+/* Contact Section Form Styling */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 500px; /* Constrains the form width from expanding infinitely */
+    margin-top: 2rem;
+}
+
+#contact label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: -0.5rem; /* Pulls the label closer to its input box */
+}
+
+#contact input {
+    background: var(--surface-glass);
+    border: 1px solid var(--border-glass);
+    color: var(--text-main);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-global);
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+#contact input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 8px rgba(88, 166, 255, 0.3);
+}
+
+#contact button {
+    background: var(--accent-blue);
+    color: #0d1117;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+#contact button:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 15px var(--accent-blue);
+}
+/* Structure Polish */
+section {
+    padding: 6rem 2rem;
+    border-bottom: 1px solid var(--border-glass); /* Subtle separation line */
+}
+
+footer {
+    padding: 3rem 2rem;
+    text-align: center;
+}
