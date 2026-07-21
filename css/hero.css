@@ -27,13 +27,28 @@
     margin-top: 0.5rem;
 }
 
+/* Tech Stack Pill Styling & Base Animation Setup */
 .tech-stack span {
     background: var(--surface-glass);
     border: 1px solid var(--border-glass);
     padding: 0.5rem 1rem;
-    border-radius: 20px; /* Turns the square boxes into round pills */
+    border-radius: 20px;
     font-size: 0.9rem;
     color: var(--accent-blue);
+    display: inline-block; /* Enables smooth transform animations */
+    cursor: default;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+                background-color 0.25s ease, 
+                border-color 0.25s ease, 
+                box-shadow 0.25s ease;
+}
+
+/* Hover Animation Effect */
+.tech-stack span:hover {
+    transform: translateY(-4px) scale(1.03); /* Lifts and slightly enlarges */
+    background-color: rgba(88, 166, 255, 0.12);
+    border-color: var(--accent-blue);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2); /* Soft ambient glow */
 }
 
 /* Style the terminal block */
