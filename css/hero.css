@@ -73,8 +73,7 @@
     align-items: center;
     justify-content: center;
     color: var(--text-main);
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;    
     /* Ensure no text or box glows are applied */
     box-shadow: none !important;
     text-shadow: none !important;
