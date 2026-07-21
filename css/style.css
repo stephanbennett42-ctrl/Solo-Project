@@ -4,11 +4,25 @@
 @import url("navbar.css");
 @import url("hero.css");
 
-/* Global Application */
+/* Global Theme Variables */
+:root {
+    /* Main Theme Colors */
+    --bg-main: #192230;                             /* Deep Navy background */
+    --surface-glass: rgba(61, 71, 78, 0.35);        /* Slate glass surface (#3D474E) */
+    --border-glass: rgba(255, 205, 0, 0.22);        /* Electric Yellow glass border */
+    
+    /* Typography Colors */
+    --text-main: #FFCD00;                            /* Electric Yellow text */
+    --text-muted: rgba(255, 205, 0, 0.75);           /* Muted Yellow text */
+    
+    /* Accent & Links */
+    --accent-blue: #FFCD00;                          /* Primary Accent mapped to Yellow */
+    --accent-glow: rgba(255, 205, 0, 0.35);          /* Ambient Yellow glow */
+}
+/* Ensure body background uses the new plum color */
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-main);
     color: var(--text-main);
-    font-family: var(--font-global);
 }
 
 /* Protect Name Font & Add Glow Effect */
@@ -16,7 +30,7 @@ body {
     font-family: var(--font-name);
     font-weight: 700;
     color: var(--text-main);
-    text-shadow: 0 0 8px var(--accent-blue), 0 0 20px var(--accent-blue);
+    text-shadow: 0 0 8px var(--accent-glow), 0 0 20px var(--accent-glow);
 }
 
 /* Glassmorphism Effect for Nav and Project Cards */
@@ -38,46 +52,39 @@ a {
 a:hover {
     text-shadow: 0 0 8px var(--accent-blue);
 }
-/* Add to CSS/style.css */
 
-/* Center the main content and constrain the width */
+/* Layout Containers */
 main, header, footer {
     max-width: 1100px;
     margin: 0 auto; /* Automatically centers the container */
 }
 
-/* Add massive breathing room between sections */
+/* Section Spacing & Structure */
 section {
-    padding: 5rem 2rem; 
+    padding: 6rem 2rem;
+    border-bottom: 1px solid var(--border-glass); /* Subtle separation line */
 }
 
 /* Push text elements away from each other */
 h1, h2, h3, p {
     margin-bottom: 1.5rem;
 }
-/* Update this in CSS/style.css */
 
+/* Project Cards */
 .card {
-    background: var(--surface-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-glass);
-    border-radius: 12px;
-    
-    /* NEW BOX MODEL RULES */
     padding: 2rem;      /* Pushes the text away from the glass edges */
-    margin-top: 2rem;   /* Pushes the card down away from the "My Projects" heading */
+    margin-top: 2rem;   /* Pushes the card down away from the heading */
 }
-/* Contact Section Form Styling */
-/* Center the Contact Section Container */
+
+/* Contact Section Layout */
 #contact {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the heading and form horizontally on the page */
+    align-items: center; /* Centers the heading and form horizontally */
     text-align: center;
 }
 
-/* Form Container Styling */
+/* Form Styling */
 #contact form {
     display: flex;
     flex-direction: column;
@@ -85,20 +92,13 @@ h1, h2, h3, p {
     width: 100%;
     max-width: 500px;    /* Keeps the form from stretching too wide */
     margin-top: 2rem;
-    text-align: left;    /* Keeps the input labels aligned cleanly to the left */
-}
-#contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    max-width: 500px; /* Constrains the form width from expanding infinitely */
-    margin-top: 2rem;
+    text-align: left;    /* Keeps input labels aligned cleanly to the left */
 }
 
 #contact label {
     font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: -0.5rem; /* Pulls the label closer to its input box */
+    margin-bottom: -0.5rem; /* Pulls label closer to input box */
 }
 
 #contact input {
@@ -115,12 +115,12 @@ h1, h2, h3, p {
 
 #contact input:focus {
     border-color: var(--accent-blue);
-    box-shadow: 0 0 8px rgba(88, 166, 255, 0.3);
+    box-shadow: 0 0 8px var(--accent-glow);
 }
 
 #contact button {
     background: var(--accent-blue);
-    color: #0d1117;
+    color: var(--bg-main); /* High contrast plum text on cream button */
     padding: 0.85rem;
     border: none;
     border-radius: 8px;
@@ -133,12 +133,7 @@ h1, h2, h3, p {
 
 #contact button:hover {
     opacity: 0.9;
-    box-shadow: 0 0 15px var(--accent-blue);
-}
-/* Structure Polish */
-section {
-    padding: 6rem 2rem;
-    border-bottom: 1px solid var(--border-glass); /* Subtle separation line */
+    box-shadow: 0 0 15px var(--accent-glow);
 }
 
 footer {
