@@ -1,25 +1,83 @@
-/* css/navbar.css */
-nav {
+/* Fixed Left Side Drawer Container */
+nav.side-drawer {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: 180px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem var(--spacing-md);
+    padding: 1.5rem 1rem;
+    background: var(--surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    z-index: 1000;
 }
 
-nav ul {
+nav.side-drawer .logo {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+/* Hide the actual checkbox input */
+.menu-checkbox {
+    display: none;
+}
+
+/* Style the label to look like a button */
+.menu-btn {
+    background: transparent;
+    border: 1px solid var(--border-glass);
+    color: var(--text-main);
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Nav Links Initial State (Collapsed) */
+nav.side-drawer ul {
     display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     list-style: none;
-    gap: 1.5rem;
-}
-/* Update this in CSS/navbar.css */
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
     
-    /* NEW BOX MODEL RULES */
-    padding: 1rem 2rem;  /* Inside space */
-    margin: 1.5rem 2rem; /* Outside space - pulls it off the top and sides */
-    border-radius: 16px; /* Rounds the corners of the glass nav */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+nav.side-drawer ul li a {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+}
+
+/* PURE CSS MAGIC: Expand menu when checkbox is checked */
+.menu-checkbox:checked ~ ul {
+    max-height: 200px;
+    opacity: 1;
+}
+
+/* Offset main content layout for desktop screens */
+@media (min-width: 900px) {
+    main {
+        margin-left: 220px;
+    }
 }
