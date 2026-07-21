@@ -69,6 +69,24 @@ h1, h2, h3, p {
     margin-top: 2rem;   /* Pushes the card down away from the "My Projects" heading */
 }
 /* Contact Section Form Styling */
+/* Center the Contact Section Container */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the heading and form horizontally on the page */
+    text-align: center;
+}
+
+/* Form Container Styling */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 500px;    /* Keeps the form from stretching too wide */
+    margin-top: 2rem;
+    text-align: left;    /* Keeps the input labels aligned cleanly to the left */
+}
 #contact form {
     display: flex;
     flex-direction: column;
