@@ -18,6 +18,14 @@
     flex: 1;
     max-width: 650px;
 }
+.hero-content p {
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem;      /* Gives it a slightly stronger presence */
+    line-height: 1.6;        /* Increases readability */
+    color: var(--text-muted);
+}
 
 /* Right Column Profile Image */
 .hero-image {
@@ -49,19 +57,7 @@ h1 {
     font-style: normal;
     letter-spacing: 1px; /* Gives the stencil font nice breathing room */
 }
-#hero p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 600px;
-}
 
-/* Style the tech badges */
-.tech-stack {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-}
 
 /* Tech Stack Pill Styling & Base Animation Setup */
 .tech-stack span {
